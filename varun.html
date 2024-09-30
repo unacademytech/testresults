@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRG NEET Major Results - 29/09/2024</title>
+    <style>
+        /* Background and General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #70e1f5, #ffd194);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container Styling */
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Image Styling */
+        img {
+            width: 120px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite alternate;
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Input Fields */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Button Styling */
+        button {
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #0056b3, #0094cc);
+        }
+
+        /* Result Information and Table */
+        .result-info, .result-table {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .result-info p, .result-table p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .result-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .result-table th, .result-table td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .result-table th {
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .rank {
+            color: red;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 18px;
+            animation: flash 1.5s linear infinite;
+        }
+
+        @keyframes flash {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0.5;
+            }
+        }
+
+        .remarks {
+            margin-top: 10px;
+            font-size: 16px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Image included from the provided link -->
+    <img src="https://i.postimg.cc/XN2Bhs3z/IMG-2175.png" alt="Scoreboard">
+
+    <h2>SRG NEET Major Results</h2>
+    <p><strong>Dated: 29/09/2024 17:00 to 20:20 pm</strong></p>
+
+    <!-- Input Fields -->
+    <input type="text" id="studentId" placeholder="Student ID">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="showResult()">Show Result</button>
+
+    <!-- Result Info Section -->
+    <div class="result-info">
+        <p><strong>Student Name:</strong> <span id="studentName"></span></p>
+        <p><strong>Guardian Parent:</strong> <span id="parentsName"></span></p>
+        <p><strong>Student ID:</strong> <span id="showStudentId"></span></p>
+    </div>
+
+    <!-- Result Table Section -->
+    <div class="result-table">
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+            </tr>
+            <tr>
+                <td>Biology</td>
+                <td id="biologyMarks"></td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td id="chemistryMarks"></td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td id="physicsMarks"></td>
+            </tr>
+        </table>
+        <p class="rank"><strong>All India SRG Rank:</strong> <span id="rank"></span></p>
+        <p class="remarks"><strong>Remarks:</strong> <span id="remarks"></span></p>
+    </div>
+</div>
+
+<script>
+    function showResult() {
+        // Get user input
+        const studentId = document.getElementById("studentId").value;
+        const password = document.getElementById("password").value;
+
+        // Check if the input matches the correct ID and password
+        if (studentId === "2262112203" && password === "Brajmanju@1985") {
+            // Show the result section
+            document.querySelector(".result-info").style.display = "block";
+            document.querySelector(".result-table").style.display = "block";
+
+            // Display student details and results
+            document.getElementById("studentName").textContent = "Sarthak Vatsa";
+            document.getElementById("parentsName").textContent = "Dr Pr Braj Bhushan Chaudhur";
+            document.getElementById("showStudentId").textContent = studentId;
+
+            document.getElementById("biologyMarks").textContent = "355/360";
+            document.getElementById("chemistryMarks").textContent = "175/180";
+            document.getElementById("physicsMarks").textContent = "170/180";
+
+            document.getElementById("rank").textContent = "4";
+            document.getElementById("remarks").textContent = "Excellent achievement, to be continued in SRG";
+        } else {
+            alert("Invalid Student ID or Password");
+        }
+    }
+</script>
+
+</body>
+</html>
